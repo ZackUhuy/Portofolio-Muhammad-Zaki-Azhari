@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Muhammad Zaki Azhari | Data Science</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js untuk interaksi sederhana -->
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Google Fonts: Inter (Clean & Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* gray-50 */
+            color: #111827; /* gray-900 */
+        }
+
+        /* Smooth Transition for hover effects */
+        .transition-all {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+        }
+        
+        /* Utility untuk grayscale logo */
+        .grayscale-logo {
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        
+        .grayscale-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="antialiased" x-data="{ openMenu: false }">
+
+    <!-- NAVIGASI -->
+    <nav class="bg-white/80 backdrop-blur-md border-b border-gray-200 fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo / Nama -->
+                <a href="#hero" class="text-xl font-bold text-gray-900 tracking-tight">
+                    Muhammad Zaki Azhari<span class="text-indigo-600">.</span>
+                </a>
+
+                <!-- Hamburger Mobile -->
+                <div class="md:hidden">
+                    <button @click="openMenu = !openMenu" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <svg x-show="!openMenu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        <svg x-show="openMenu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-8 items-center text-sm font-medium">
+                    <a href="#visualisasi" class="text-gray-600 hover:text-indigo-600 transition-colors">Visualisasi</a>
+                    <a href="#proyek" class="text-gray-600 hover:text-indigo-600 transition-colors">Proyek</a>
+                    <a href="#kontak" class="text-gray-600 hover:text-indigo-600 transition-colors">Kontak</a>
+                    <a href="#" class="px-5 py-2 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+
+            <!-- Menu Mobile Dropdown -->
+            <div x-show="openMenu" x-transition class="md:hidden mt-4 bg-white border-t border-gray-100 py-4 shadow-lg">
+                <div class="flex flex-col space-y-4 px-4 text-center">
+                    <a href="#visualisasi" @click="openMenu = false" class="text-gray-600 hover:text-indigo-600 py-2">Visualisasi</a>
+                    <a href="#proyek" @click="openMenu = false" class="text-gray-600 hover:text-indigo-600 py-2">Proyek</a>
+                    <a href="#kontak" @click="openMenu = false" class="text-gray-600 hover:text-indigo-600 py-2">Kontak</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="min-h-[90vh] flex items-center pt-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center md:text-left md:flex md:items-center md:justify-between md:gap-12">
+                    
+                    <!-- Text Side -->
+                    <div class="md:w-1/2 mb-10 md:mb-0">
+                        <p class="text-indigo-600 font-semibold mb-4 tracking-wide text-sm uppercase">Data Science</p>
+                        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                            Mengubah data kompleks menjadi <span class="text-gray-500">solusi cerdas.</span>
+                        </h1>
+                        <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                            Halo, saya <strong class="text-gray-900">Muhammad Zaki Azhari</strong>. Saya adalah seorang mahasiswa Sains Data Semester 5 yang bersemangat untuk menerapkan keahlian analisis data dan pembuatan model untuk memecahkan masalah bisnis yang relevan. Keahlian inti meliputi Python, R, data visualization, dan kemampuan komunikasi yang kuat, ideal untuk peran di mana wawasan berbasis data mendorong pengambilan keputusan strategis di tingkat industri.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <a href="#proyek" class="px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all font-medium">
+                                Lihat Model & Proyek
+                            </a>
+                            <a href="#kontak" class="px-8 py-3 border border-gray-300 text-gray-700 rounded-lg hover:border-gray-900 hover:text-gray-900 transition-all font-medium">
+                                Hubungi Saya
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Image Side -->
+                    <div class="md:w-1/2 flex justify-center md:justify-end">
+                        <div class="relative w-64 h-64 md:w-80 md:h-80">
+                            <!-- Simple minimal border instead of glow -->
+                            <div class="absolute inset-0 border-2 border-gray-100 rounded-full transform translate-x-4 translate-y-4"></div>
+                            
+                            <!-- Foto Profil Baru dari Link Langsung (Direct Link) -->
+                            <!-- 
+                                UPDATE: Menggunakan object-[50%_20%] 
+                                Artinya: Posisi Horizontal 50% (Tengah), Vertikal 20% (Agak ke atas, tapi tidak mentok).
+                                Jika masih kurang pas, ubah angka 20% (makin kecil makin ke atas, makin besar makin ke bawah).
+                            -->
+                            <img src="https://i.ibb.co.com/yBPRGSbP/Zaki.jpg" 
+                                 alt="Foto Profil" 
+                                 class="relative w-full h-full object-cover object-[50%_20%] rounded-full shadow-xl bg-white">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BARU: SECTION TECH STACK / KEAHLIAN -->
+        <section id="skills" class="py-10 border-y border-gray-100 bg-white">
+            <div class="container mx-auto px-6">
+                <p class="text-center text-xs font-semibold text-gray-400 mb-8 uppercase tracking-widest">Tech Stack & Tools</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                    
+                    <!-- Python -->
+                    <div class="group flex flex-col items-center gap-2" title="Python">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="h-10 w-auto grayscale-logo">
+                    </div>
+
+                    <!-- R Language -->
+                    <div class="group flex flex-col items-center gap-2" title="R Language">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R" class="h-10 w-auto grayscale-logo">
+                    </div>
+
+                    <!-- Looker Studio -->
+                    <div class="group flex flex-col items-center gap-2" title="Google Looker Studio">
+                        <!-- Menggunakan icon dari Icons8 yang lebih stabil -->
+                        <img src="https://img.icons8.com/color/48/google-data-studio.png" alt="Looker Studio" class="h-10 w-auto grayscale-logo">
+                    </div>
+
+                    <!-- Pandas -->
+                    <div class="group flex flex-col items-center gap-2" title="Pandas">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="h-10 w-auto grayscale-logo">
+                    </div>
+
+                    <!-- Scikit Learn -->
+                    <div class="group flex flex-col items-center gap-2" title="Scikit-learn">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" class="h-8 w-auto grayscale-logo">
+                    </div>
+
+                    <!-- Plotly -->
+                    <div class="group flex flex-col items-center gap-2" title="Plotly">
+                        <img src="https://avatars.githubusercontent.com/u/5992731?s=200&v=4" alt="Plotly" class="h-8 w-auto grayscale-logo">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. VISUALISASI SECTION -->
+        <section id="visualisasi" class="py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto mb-16 text-center md:text-left">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Dasbor Visualisasi</h2>
+                    <p class="text-gray-600">Interaksi langsung dengan data menggunakan Looker Studio.</p>
+                </div>
+
+                <div class="space-y-20">
+                    <!-- Dasbor 1 -->
+                    <div class="bg-white rounded-2xl p-4 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Analisis Perilaku Pelanggan</h3>
+                            <p class="text-gray-600 max-w-2xl">
+                                Mengidentifikasi pola churn pelanggan untuk strategi retensi yang lebih baik.
+                            </p>
+                        </div>
+                        <div class="w-full aspect-video bg-gray-50 rounded-xl overflow-hidden border border-gray-200 shadow-inner">
+                            <iframe src="https://lookerstudio.google.com/embed/reporting/be0741de-922c-414c-84b3-97157aa287bf/page/p_nyvofptkbd" 
+                                    class="w-full h-full" 
+                                    style="border:0;" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Dasbor 2 -->
+                    <div class="bg-white rounded-2xl p-4 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Optimasi Kalori Gym</h3>
+                            <p class="text-gray-600 max-w-2xl">
+                                Analisis korelasi antara aktivitas fisik, BMI, dan pembakaran kalori.
+                            </p>
+                        </div>
+                        <div class="w-full aspect-video bg-gray-50 rounded-xl overflow-hidden border border-gray-200 shadow-inner">
+                            <iframe src="https://lookerstudio.google.com/embed/reporting/ca1cb22b-c4c2-4da5-a578-19e48b7b5c32/page/ym0YE" 
+                                    class="w-full h-full" 
+                                    style="border:0;" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. KAGGLE PROJECTS SECTION -->
+        <section id="proyek" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto mb-16 text-center md:text-left">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Studi Kasus & Proyek</h2>
+                    <p class="text-gray-600">Dokumentasi teknis dan kode di Kaggle.</p>
+                </div>
+
+                <!-- Grid 3 Kolom -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1: Qur'an AI -->
+                    <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-all group">
+                        <div class="h-48 overflow-hidden bg-gray-100">
+                            <img src="https://placehold.co/600x400/f3f4f6/3730A3?text=Qur'an+AI" alt="Project 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="text-xs font-semibold tracking-wide text-indigo-600 uppercase mb-2">Machine Learning</div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Prediksi Hafalan Qur'an</h3>
+                            <p class="text-gray-600 text-sm mb-6 line-clamp-3">
+                                Model klasifikasi menggunakan Random Forest untuk memprediksi kualitas hafalan.
+                            </p>
+                            <a href="https://www.kaggle.com/code/muhammadzakiazhari/machine-learning-model-to-predict-qur-an-memorizat" target="_blank" class="inline-flex items-center text-sm font-semibold text-gray-900 hover:text-indigo-600 transition-colors">
+                                Baca Notebook <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Spotify -->
+                    <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-all group">
+                        <div class="h-48 overflow-hidden bg-gray-100">
+                            <img src="https://placehold.co/600x400/f3f4f6/10b981?text=Spotify+Data" alt="Project 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="text-xs font-semibold tracking-wide text-green-600 uppercase mb-2">Data Analysis</div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Analisis Spotify</h3>
+                            <p class="text-gray-600 text-sm mb-6 line-clamp-3">
+                                Eksplorasi tren musik dan preferensi pendengar menggunakan Python dan Plotly.
+                            </p>
+                            <a href="https://www.kaggle.com/code/muhammadzakiazhari/spotify-data-analytic" target="_blank" class="inline-flex items-center text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors">
+                                Baca Notebook <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Logistic Regression -->
+                    <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-all group">
+                        <div class="h-48 overflow-hidden bg-gray-100">
+                            <img src="https://placehold.co/600x400/f3f4f6/f97316?text=Logistic+Reg" alt="Project 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="text-xs font-semibold tracking-wide text-orange-600 uppercase mb-2">Model Evaluation</div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Evaluasi Regresi Logistik</h3>
+                            <p class="text-gray-600 text-sm mb-6 line-clamp-3">
+                                Analisis mendalam tentang metrik evaluasi model klasifikasi.
+                            </p>
+                            <a href="https://www.kaggle.com/code/muhammadzakiazhari/logistik-regression-and-evaluation" target="_blank" class="inline-flex items-center text-sm font-semibold text-gray-900 hover:text-orange-600 transition-colors">
+                                Baca Notebook <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Gym Exploration -->
+                    <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-all group">
+                        <div class="h-48 overflow-hidden bg-gray-100">
+                            <img src="https://placehold.co/600x400/f3f4f6/ef4444?text=Gym+Exploration" alt="Project 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="text-xs font-semibold tracking-wide text-red-600 uppercase mb-2">Exploratory Data Analysis</div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Eksplorasi Data Gym</h3>
+                            <p class="text-gray-600 text-sm mb-6 line-clamp-3">
+                                Analisis statistik dan visualisasi data anggota gym untuk memahami pola pembakaran kalori.
+                            </p>
+                            <a href="https://www.kaggle.com/code/muhammadzakiazhari/gym-data-exploration" target="_blank" class="inline-flex items-center text-sm font-semibold text-gray-900 hover:text-red-600 transition-colors">
+                                Baca Notebook <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: DT vs RF -->
+                    <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-all group">
+                        <div class="h-48 overflow-hidden bg-gray-100">
+                            <img src="https://placehold.co/600x400/f3f4f6/8b5cf6?text=DT+vs+RF" alt="Project 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="text-xs font-semibold tracking-wide text-violet-600 uppercase mb-2">Model Comparison</div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Decision Tree vs Random Forest</h3>
+                            <p class="text-gray-600 text-sm mb-6 line-clamp-3">
+                                Studi komparatif kinerja algoritma Decision Tree dan Random Forest, menganalisis akurasi, overfitting, dan waktu komputasi.
+                            </p>
+                            <a href="https://www.kaggle.com/code/muhammadzakiazhari/comparing-decision-tree-and-random-forest" target="_blank" class="inline-flex items-center text-sm font-semibold text-gray-900 hover:text-violet-600 transition-colors">
+                                Baca Notebook <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. CONTACT SECTION -->
+        <section id="kontak" class="py-24 bg-gray-50 border-t border-gray-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Mari Berkolaborasi</h2>
+                <p class="text-gray-600 text-lg mb-10 max-w-xl mx-auto">
+                    Tertarik dengan profil saya atau ingin berdiskusi tentang proyek data?
+                </p>
+
+                <div class="flex justify-center mb-12">
+                    <a href="mailto:muhzaki46@gmail.com" class="px-8 py-4 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl">
+                        Kirim Email ke muhzaki46@gmail.com
+                    </a>
+                </div>
+
+                <div class="flex justify-center space-x-8">
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/muhammad-zaki-azhari-bb9693289" target="_blank" class="text-gray-400 hover:text-indigo-600 transition-colors">
+                        <span class="sr-only">LinkedIn</span>
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/ZackUhuy" target="_blank" class="text-gray-400 hover:text-gray-900 transition-colors">
+                        <span class="sr-only">GitHub</span>
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.109-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <!-- Kaggle -->
+                    <a href="https://www.kaggle.com/muhammadzakiazhari" target="_blank" class="text-gray-400 hover:text-blue-500 transition-colors">
+                        <span class="sr-only">Kaggle</span>
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M11.63 15.65c.348.348.800.521 1.32.521.521 0 .973-.173 1.32-.521l4.908-4.908c.348-.348.521-.8.521-1.32 0-.521-.173-.973-.521-1.32L14.27 3.2c-.348-.348-.8-.521-1.32-.521-.521 0-.973.173-1.32.521L6.72 8.11l4.91 4.91v.001zm0 2.641L6.72 23.2l-4.91-4.908c-.348-.348-.521-.8-.521-1.32 0-.521.173-.973.521-1.32L6.72 10.74l4.91 4.91v.001l-.001.001z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white py-8 border-t border-gray-100 text-center text-gray-500 text-sm">
+        <p>&copy; <span id="year"></span> Muhammad Zaki Azhari. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
