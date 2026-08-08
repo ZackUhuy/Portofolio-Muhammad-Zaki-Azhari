@@ -42,6 +42,23 @@
             opacity: 1;
             transform: scale(1.1);
         }
+
+        /* Style khusus untuk Cetak / Download PDF */
+        @media print {
+            nav, .no-print {
+                display: none !important;
+            }
+            body {
+                background-color: #ffffff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            section {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+                page-break-inside: avoid;
+            }
+        }
     </style>
 </head>
 <body class="antialiased" x-data="{ openMenu: false }">
@@ -67,11 +84,13 @@
                 <div class="hidden md:flex space-x-8 items-center text-sm font-medium">
                     <a href="#visualisasi" class="text-gray-600 hover:text-indigo-600 transition-colors">Visualisasi</a>
                     <a href="#proyek" class="text-gray-600 hover:text-indigo-600 transition-colors">Proyek</a>
+                    <a href="#sertifikasi" class="text-gray-600 hover:text-indigo-600 transition-colors">Sertifikasi</a>
                     <a href="#kontak" class="text-gray-600 hover:text-indigo-600 transition-colors">Kontak</a>
-                    <!-- Update Link Download CV -->
-                    <a href="https://drive.google.com/file/d/1u_3bscovBhDJFK6zfnZZg6zbtQE1YWtO/view?usp=sharing" target="_blank" class="px-5 py-2 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors">
-                        Download CV
-                    </a>
+                    <!-- Button Download Halaman PDF -->
+                    <button onclick="window.print()" class="px-5 py-2 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        Download PDF
+                    </button>
                 </div>
             </div>
 
@@ -80,7 +99,12 @@
                 <div class="flex flex-col space-y-4 px-4 text-center">
                     <a href="#visualisasi" @click="openMenu = false" class="text-gray-600 hover:text-indigo-600 py-2">Visualisasi</a>
                     <a href="#proyek" @click="openMenu = false" class="text-gray-600 hover:text-indigo-600 py-2">Proyek</a>
+                    <a href="#sertifikasi" @click="openMenu = false" class="text-gray-600 hover:text-indigo-600 py-2">Sertifikasi</a>
                     <a href="#kontak" @click="openMenu = false" class="text-gray-600 hover:text-indigo-600 py-2">Kontak</a>
+                    <button onclick="window.print()" @click="openMenu = false" class="mx-auto px-5 py-2 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 text-sm font-medium">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        Download PDF
+                    </button>
                 </div>
             </div>
         </div>
@@ -101,7 +125,7 @@
                             Mengubah data kompleks menjadi <span class="text-gray-500">solusi cerdas.</span>
                         </h1>
                         <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-                            Halo, saya <strong class="text-gray-900">Muhammad Zaki Azhari</strong>. Saya adalah seorang mahasiswa Sains Data Semester 6 yang bersemangat untuk menerapkan keahlian analisis data dan pembuatan model untuk memecahkan masalah bisnis yang relevan. Keahlian inti meliputi Python, R, data visualization, dan kemampuan komunikasi yang kuat, ideal untuk peran di mana wawasan berbasis data mendorong pengambilan keputusan strategis di tingkat industri.
+                            Halo, saya <strong class="text-gray-900">Muhammad Zaki Azhari</strong>. Saya adalah seorang mahasiswa Sains Data Semester 7 yang bersemangat untuk menerapkan keahlian analisis data dan pembuatan model untuk memecahkan masalah bisnis yang relevan. Keahlian inti meliputi Python, R, data visualization, dan kemampuan komunikasi yang kuat, ideal untuk peran di mana wawasan berbasis data mendorong pengambilan keputusan strategis di tingkat industri.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                             <a href="#proyek" class="px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all font-medium">
@@ -217,6 +241,23 @@
                             </iframe>
                         </div>
                     </div>
+
+                    <!-- Dasbor 3 -->
+                    <div class="bg-white rounded-2xl p-4 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Kinerja Pendidikan Klaten (2020–2024)</h3>
+                            <p class="text-gray-600 max-w-2xl">
+                                Analisis kinerja pendidikan di Kabupaten Klaten periode 2020–2024 serta pemetaan distribusi sekolah dan tenaga pengajar (guru).
+                            </p>
+                        </div>
+                        <div class="w-full aspect-video bg-gray-50 rounded-xl overflow-hidden border border-gray-200 shadow-inner">
+                            <iframe src="https://datastudio.google.com/embed/reporting/e8338dfb-b344-465e-b8bf-b382eac4698d/page/Z1wnF" 
+                                    class="w-full h-full" 
+                                    style="border:0;" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -321,7 +362,95 @@
             </div>
         </section>
 
-        <!-- 4. CONTACT SECTION -->
+        <!-- 4. SERTIFIKASI SECTION -->
+        <section id="sertifikasi" class="py-24 bg-gray-50 border-t border-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto mb-16 text-center md:text-left">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Sertifikasi & Penghargaan</h2>
+                    <p class="text-gray-600">Lisensi, sertifikat magang, dan partisipasi konferensi ilmiah.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Sertifikat 1: Magang StatsMe -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-semibold rounded-full border border-indigo-100">Magang Mandiri</span>
+                                <span class="text-xs text-gray-400 font-medium">Februari 2026</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Peserta Magang Mandiri</h3>
+                            <p class="text-sm font-medium text-gray-700 mb-2">PT. Cemerlang Statistika Indonesia (StatsMe)</p>
+                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                                Sertifikat penyelesaian kegiatan Magang Mandiri di PT. Cemerlang Statistika Indonesia (5 Januari 2026 - 13 Februari 2026).
+                            </p>
+                        </div>
+                        <a href="Sertif/WhatsApp%20Image%202026-08-07%20at%2015.42.36.jpeg" target="_blank" class="inline-flex items-center justify-center px-4 py-2.5 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors w-full sm:w-auto">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            Lihat Sertifikat
+                        </a>
+                    </div>
+
+                    <!-- Sertifikat 2: ICDSOS Author -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-semibold rounded-full border border-purple-100">Konferensi Internasional</span>
+                                <span class="text-xs text-gray-400 font-medium">2025</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Author - ICDSOS 2025</h3>
+                            <p class="text-sm font-medium text-gray-700 mb-2">International Conference on Data Science and Official Statistics</p>
+                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                                Sertifikat sebagai Penulis (Author) pada International Conference on Data Science and Official Statistics (ICDSOS) 2025.
+                            </p>
+                        </div>
+                        <a href="Sertif/Salinan%20ICDSOS%202025%20-%20Author%20-%20M%20Z%20Azhari%20(1).pdf" target="_blank" class="inline-flex items-center justify-center px-4 py-2.5 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors w-full sm:w-auto">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            Buka Dokumentasi (PDF)
+                        </a>
+                    </div>
+
+                    <!-- Sertifikat 3: ICDSOS Presenter -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full border border-blue-100">Presenter</span>
+                                <span class="text-xs text-gray-400 font-medium">2025</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Presenter - ICDSOS 2025</h3>
+                            <p class="text-sm font-medium text-gray-700 mb-2">International Conference on Data Science and Official Statistics</p>
+                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                                Sertifikat sebagai Presenter pada International Conference on Data Science and Official Statistics (ICDSOS) 2025.
+                            </p>
+                        </div>
+                        <a href="Sertif/Salinan%20ICDSOS%202025%20-%20Presenter%20-%20M%20Z%20Azhari%20(1).pdf" target="_blank" class="inline-flex items-center justify-center px-4 py-2.5 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors w-full sm:w-auto">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            Buka Dokumentasi (PDF)
+                        </a>
+                    </div>
+
+                    <!-- Sertifikat 4: DataVers -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-100">Kompetisi / Event</span>
+                                <span class="text-xs text-gray-400 font-medium">DataVers</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Peserta DataVers</h3>
+                            <p class="text-sm font-medium text-gray-700 mb-2">DataVers Data Science Competition</p>
+                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                                Sertifikat keikutsertaan sebagai Peserta pada ajang DataVers.
+                            </p>
+                        </div>
+                        <a href="Sertif/Sertifikat%20Peserta%20DataVers_Muhammad%20Zaki%20Azhari.pdf" target="_blank" class="inline-flex items-center justify-center px-4 py-2.5 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors w-full sm:w-auto">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            Buka Dokumentasi (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CONTACT SECTION -->
         <section id="kontak" class="py-24 bg-gray-50 border-t border-gray-100">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl font-bold text-gray-900 mb-6">Mari Berkolaborasi</h2>
