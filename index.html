@@ -82,6 +82,7 @@
 
                 <!-- Menu Desktop -->
                 <div class="hidden md:flex space-x-8 items-center text-sm font-medium">
+                    <a href="#aplikasi-web" class="text-gray-600 hover:text-indigo-600 transition-colors">Aplikasi Web</a>
                     <a href="#visualisasi" class="text-gray-600 hover:text-indigo-600 transition-colors">Visualisasi</a>
                     <a href="#proyek" class="text-gray-600 hover:text-indigo-600 transition-colors">Proyek</a>
                     <a href="#sertifikasi" class="text-gray-600 hover:text-indigo-600 transition-colors">Sertifikasi</a>
@@ -97,6 +98,7 @@
             <!-- Menu Mobile Dropdown -->
             <div x-show="openMenu" x-transition class="md:hidden mt-4 bg-white border-t border-gray-100 py-4 shadow-lg">
                 <div class="flex flex-col space-y-4 px-4 text-center">
+                    <a href="#aplikasi-web" @click="openMenu = false" class="text-gray-600 hover:text-indigo-600 py-2">Aplikasi Web</a>
                     <a href="#visualisasi" @click="openMenu = false" class="text-gray-600 hover:text-indigo-600 py-2">Visualisasi</a>
                     <a href="#proyek" @click="openMenu = false" class="text-gray-600 hover:text-indigo-600 py-2">Proyek</a>
                     <a href="#sertifikasi" @click="openMenu = false" class="text-gray-600 hover:text-indigo-600 py-2">Sertifikasi</a>
@@ -128,8 +130,8 @@
                             Halo, saya <strong class="text-gray-900">Muhammad Zaki Azhari</strong>. Saya adalah seorang mahasiswa Sains Data Semester 7 yang bersemangat untuk menerapkan keahlian analisis data dan pembuatan model untuk memecahkan masalah bisnis yang relevan. Keahlian inti meliputi Python, R, data visualization, dan kemampuan komunikasi yang kuat, ideal untuk peran di mana wawasan berbasis data mendorong pengambilan keputusan strategis di tingkat industri.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                            <a href="#proyek" class="px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all font-medium">
-                                Lihat Model & Proyek
+                            <a href="#aplikasi-web" class="px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all font-medium">
+                                Lihat Sistem & Proyek
                             </a>
                             <a href="#kontak" class="px-8 py-3 border border-gray-300 text-gray-700 rounded-lg hover:border-gray-900 hover:text-gray-900 transition-all font-medium">
                                 Hubungi Saya
@@ -262,8 +264,172 @@
             </div>
         </section>
 
-        <!-- 3. KAGGLE PROJECTS SECTION -->
-        <section id="proyek" class="py-24 bg-white">
+        <!-- 3. APLIKASI WEB & SISTEM INTERAKTIF SECTION -->
+        <section id="aplikasi-web" class="py-24 bg-white border-t border-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto mb-16 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-semibold rounded-full border border-indigo-100 mb-3">
+                        <span class="w-2 h-2 rounded-full bg-indigo-600 animate-pulse"></span>
+                        Live Production Systems
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Aplikasi Web & Sistem Interaktif</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Aplikasi berbasis data yang dideploy secara publik untuk simulasi bisnis, optimasi rantai pasok, dan analitik operasional interaktif. Anda dapat berinteraksi langsung melalui frame di bawah ini.
+                    </p>
+                </div>
+
+                <div class="space-y-20">
+                    <!-- App 1: ISPS -->
+                    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <!-- Header Info & Metadata -->
+                        <div class="p-6 md:p-8 bg-white border-b border-gray-200">
+                            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                                <div class="space-y-2">
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100">Supply Chain Analytics</span>
+                                        <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-100">Demand Forecasting</span>
+                                        <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-100">Live on Vercel</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-gray-900">ISPS — Integrated Supply Chain Planning System</h3>
+                                    <p class="text-gray-600 text-sm max-w-3xl leading-relaxed">
+                                        Platform perencanaan rantai pasok komprehensif untuk PT Nusantara Consumer Products. Dirancang untuk membantu pengambilan keputusan strategis melalui peramalan permintaan (<em class="not-italic font-medium text-gray-800">demand forecasting</em>), kalkulasi stok pengaman (<em class="not-italic font-medium text-gray-800">safety stock</em>), simulasi pengisian ulang (<em class="not-italic font-medium text-gray-800">replenishment</em>), serta mitigasi risiko stockout vs overstock.
+                                    </p>
+                                </div>
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <a href="https://pt-nusantara-consumer-products.vercel.app/" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="inline-flex items-center justify-center px-5 py-2.5 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">
+                                        Buka Aplikasi Penuh
+                                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Browser Mockup Window Bar -->
+                        <div class="bg-gray-900 px-4 py-3 flex items-center justify-between border-b border-gray-800">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-3 h-3 rounded-full bg-red-400 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-amber-400 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-400 inline-block"></span>
+                                <div class="ml-3 hidden sm:flex items-center gap-1.5 px-3 py-1 bg-gray-800 rounded-md text-xs font-mono text-gray-300 border border-gray-700">
+                                    <svg class="w-3 h-3 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+                                    <span>https://pt-nusantara-consumer-products.vercel.app/</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 text-xs">
+                                <span class="inline-flex items-center font-medium text-emerald-400">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
+                                    Live Demo Interaktif
+                                </span>
+                                <a href="https://pt-nusantara-consumer-products.vercel.app/" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer" 
+                                   class="text-gray-300 hover:text-white flex items-center gap-1 transition-colors">
+                                    <span>Buka Tab Baru</span>
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Iframe -->
+                        <div class="relative w-full bg-white">
+                            <iframe src="https://pt-nusantara-consumer-products.vercel.app/" 
+                                    title="ISPS - Integrated Supply Chain Planning System"
+                                    class="w-full h-[540px] md:h-[650px] border-0 block" 
+                                    loading="lazy"
+                                    allow="fullscreen">
+                            </iframe>
+                        </div>
+
+                        <!-- Utility helper footer -->
+                        <div class="px-5 py-3 bg-gray-50 border-t border-gray-200 text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-2">
+                            <span>💡 Coba klik dan jelajahi menu simulasi data di dalam frame di atas.</span>
+                            <a href="https://pt-nusantara-consumer-products.vercel.app/" target="_blank" rel="noopener noreferrer" class="font-medium text-indigo-600 hover:text-indigo-800 inline-flex items-center gap-1">
+                                Tampilan Penuh di Tab Baru &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- App 2: Nari Kopi -->
+                    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <!-- Header Info & Metadata -->
+                        <div class="p-6 md:p-8 bg-white border-b border-gray-200">
+                            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                                <div class="space-y-2">
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-100">F&B Business Analytics</span>
+                                        <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-purple-50 text-purple-700 border border-purple-100">Revenue & Operations</span>
+                                        <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-teal-50 text-teal-700 border border-teal-100">Live on Netlify</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-gray-900">Nari Kopi — Espresso Premium Analytics</h3>
+                                    <p class="text-gray-600 text-sm max-w-3xl leading-relaxed">
+                                        Dasbor analitik penjualan dan kontrol kualitas untuk kedai kopi modern. Mengagregasi metrik profil ekstraksi espresso, visualisasi distribusi pesanan harian, analisis waktu sibuk (<em class="not-italic font-medium text-gray-800">peak hours</em>), dan kontribusi margin per produk guna mengoptimalkan operasional kafe.
+                                    </p>
+                                </div>
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <a href="https://dashboard-nari-kopi.netlify.app/" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="inline-flex items-center justify-center px-5 py-2.5 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">
+                                        Buka Aplikasi Penuh
+                                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Browser Mockup Window Bar -->
+                        <div class="bg-gray-900 px-4 py-3 flex items-center justify-between border-b border-gray-800">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-3 h-3 rounded-full bg-red-400 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-amber-400 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-400 inline-block"></span>
+                                <div class="ml-3 hidden sm:flex items-center gap-1.5 px-3 py-1 bg-gray-800 rounded-md text-xs font-mono text-gray-300 border border-gray-700">
+                                    <svg class="w-3 h-3 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+                                    <span>https://dashboard-nari-kopi.netlify.app/</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 text-xs">
+                                <span class="inline-flex items-center font-medium text-emerald-400">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
+                                    Live Demo Interaktif
+                                </span>
+                                <a href="https://dashboard-nari-kopi.netlify.app/" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer" 
+                                   class="text-gray-300 hover:text-white flex items-center gap-1 transition-colors">
+                                    <span>Buka Tab Baru</span>
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Iframe -->
+                        <div class="relative w-full bg-white">
+                            <iframe src="https://dashboard-nari-kopi.netlify.app/" 
+                                    title="Nari Kopi — Espresso Premium Analytics"
+                                    class="w-full h-[540px] md:h-[650px] border-0 block" 
+                                    loading="lazy"
+                                    allow="fullscreen">
+                            </iframe>
+                        </div>
+
+                        <!-- Utility helper footer -->
+                        <div class="px-5 py-3 bg-gray-50 border-t border-gray-200 text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-2">
+                            <span>💡 Coba klik dan jelajahi menu analitik di dalam frame di atas.</span>
+                            <a href="https://dashboard-nari-kopi.netlify.app/" target="_blank" rel="noopener noreferrer" class="font-medium text-indigo-600 hover:text-indigo-800 inline-flex items-center gap-1">
+                                Tampilan Penuh di Tab Baru &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. KAGGLE PROJECTS SECTION -->
+        <section id="proyek" class="py-24 bg-gray-50 border-t border-gray-100">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto mb-16 text-center md:text-left">
                     <h2 class="text-3xl font-bold text-gray-900 mb-4">Studi Kasus & Proyek</h2>
@@ -362,8 +528,8 @@
             </div>
         </section>
 
-        <!-- 4. SERTIFIKASI SECTION -->
-        <section id="sertifikasi" class="py-24 bg-gray-50 border-t border-gray-100">
+        <!-- 5. SERTIFIKASI SECTION -->
+        <section id="sertifikasi" class="py-24 bg-white border-t border-gray-100">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto mb-16 text-center md:text-left">
                     <h2 class="text-3xl font-bold text-gray-900 mb-4">Sertifikasi & Penghargaan</h2>
@@ -450,7 +616,7 @@
             </div>
         </section>
 
-        <!-- 5. CONTACT SECTION -->
+        <!-- 6. CONTACT SECTION -->
         <section id="kontak" class="py-24 bg-gray-50 border-t border-gray-100">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl font-bold text-gray-900 mb-6">Mari Berkolaborasi</h2>
